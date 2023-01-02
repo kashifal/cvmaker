@@ -7,8 +7,8 @@
       <Input type="email" placeholder="eg:Kashif@gmail.com" label="Email" />
       <Input type="tel" placeholder="eg:3067250955" label="Phone" />
       <Input type="text" placeholder="eg:Lahore" label="Address" />
-      <Select label="Degree" :option="degree"  />
-      <Select label="Major" :option="major"  />
+      <!-- <Select label="Degree" :option="degree"  />
+      <Select label="Major" :option="major"  /> -->
     </div>
   </div>
 </template>
@@ -28,13 +28,13 @@ export default {
     const degree = [
       {
         id:1,
-        degree : 'Bachelor'
+        option : 'Bachelor'
       }
     ];
     const major = [
       {
         id:1,
-        degree : 'Science'
+        option : 'Science'
       }
     ];
 

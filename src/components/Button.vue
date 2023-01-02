@@ -1,6 +1,6 @@
 <template>
 
-    <button @click="setFunc()" :class="styles" class="px-4 py-2 rounded hover:scale-95 bg-white text-gray-700 hover:text-blue-600 transition-all">
+    <button @click="setFunc()" :class="styles" class="px-4 py-2 rounded hover:scale-95 bg-white text-gray-700 hover:text-emerald-600 transition-all">
       {{text}}
     </button>
 

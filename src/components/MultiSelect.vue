@@ -1,20 +1,42 @@
 <template>
   <div>
-
     <div class="relative">
-      <label class="block text-sm text-lg font-normal py-2 text-gray-600">{{ label }}</label>
-      <div class="ring-1 cursor-pointer overflow-auto block px-2 py-2 text-sm w-full shadow focus:border-1 block focus:ring-1
- focus:ring-red-600 flex gap-x-2 ring:outline-1 text-gray-700 focus:outline-blue-600 focus:border-red-400 focus:ring-red-600 rounded ring-gray-300" @click="setDropdown()" >
-        <p>{{ arr.length <= 0 ? 'Languages' : '' }}</p>
-        <p class="bg-blue-100  px-2  rounded-full"    v-for="item in arr" :key="item.value"  @click="deleteItem(item)">
-          {{ item.text }}</p>
+      <label class="block   text-lg font-normal py-2 text-gray-600">{{
+        label
+      }}</label>
+      <div
+        class="ring-1 cursor-pointer overflow-auto multi  px-2 py-2 text-sm w-full shadow focus:border-1 block focus:ring-1 focus:ring-red-600 flex gap-x-2 ring:outline-1 text-gray-700 focus:outline-emerald-600 focus:border-red-400 focus:ring-red-600 rounded ring-gray-300"
+        :class="arr.length <= 0 ? 'flex justify-between' : ''"
+      >
+        <p>{{ arr.length <= 0 ? "Languages" : "" }}</p>
+
+        <p
+          class="bg-emerald-100 px-2 rounded-full"
+          v-for="item in arr"
+          :key="item.value"
+          @click="deleteItem(item)"
+        >
+          {{ item.text }}
+        </p>
+        <p
+          class="fa fa-angle-down absolute animate-pulse right-2 h-6 w-6 bg-emerald-200 rounded-full flex items-center justify-center text-emerald-600"
+          @click="setDropdown()"
+        ></p>
       </div>
-      <div :class="dropdown ? 'block' : 'hidden'" class="w-full min-h-16 py-2 px-2 absolute shadow rounded ring-1 ring-gray-200 bg-white top-20">
-        <p     class="text-sm font-light text-gray-700 hover:bg-blue-700 px-1 py-2 rounded hover:text-white cursor-pointer transition-all" v-for="item in options"  @click="setValue(item)"  :key="item.value" >
+      <div
+        :class="dropdown ? 'block' : 'hidden'"
+        class="w-full min-h-16 py-2 px-2 absolute shadow rounded ring-1 ring-gray-200 bg-white top-20"
+      >
+        <p
+          class="text-sm font-light mt-1 text-gray-700 hover:bg-emerald-700 px-1 py-2 rounded hover:text-white cursor-pointer transition-all"
+          v-for="item in data"
+          @click="setValue(item)"
+          :key="item.value"
+          :class="arr.includes(item) ? ' text-emerald-700 font-black' : ''"
+        >
           {{ item.text }}
         </p>
       </div>
-
     </div>
   </div>
 </template>
@@ -23,10 +45,11 @@ import { ref } from "vue";
 const dropdown = ref(false);
 
 export default {
-  props:{
-    label:String
+  props: {
+    label: String,
+    data: Object,
   },
-  setup() {
+  setup(props) {
     const count = ref(0);
     const arr = ref([]);
     let selected = ref();
@@ -59,34 +82,35 @@ export default {
         value: 7,
         text: "Seven",
       },
-    ]);
+    ]); 
 
-    function  setDropdown(){
+    function setDropdown() {
       dropdown.value = !dropdown.value;
     }
     const setValue = (value) => {
-      const num =  value;
+      const num = value;
       if (arr.value.includes(num.value)) {
         arr.value.splice(arr.value.indexOf(num.value), 1);
+        console.log(arr);
       } else {
-        arr.value.push(num);
-        options.value = options.value.filter((val) => {
-          return !arr.value.find((val2) => {
-            //  console.log({valueID:val.id+":"+val2.id});
-            return val.value === val2.value;
-          });
-        });
-        dropdown.value = !dropdown.value;
-        console.log(options.value);
-        console.log(arr.value);
+      
+        if(arr.value.includes(num)){
+          return;
+        }else{
+  arr.value.push(num); 
+        } 
+        dropdown.value = !dropdown.value; 
       }
     };
     const deleteItem = (item) => {
       if (arr.value.includes(item)) {
         arr.value.splice(arr.value.indexOf(item), 1);
         options.value.unshift(item);
-        selected.value=''
-        console.log('cool',options.value.sort((item,index) => item.id - index));
+        selected.value = "";
+        console.log(
+          "cool",
+          options.value.sort((item, index) => item.id - index)
+        );
       }
     };
 
@@ -103,7 +127,8 @@ export default {
       arr,
       options,
       setDropdown,
-      dropdown,setValue
+      dropdown,
+      setValue,
     };
   },
 };
@@ -134,10 +159,3 @@ select {
   cursor: pointer;
 }
 </style>
-
-
-
-
-
-
-

@@ -22,3 +22,11 @@ body
 .scroll::-moz-scrollbar {
     display: none;
 }
+
+.multi::-webkit-scrollbar {
+    width: 10;
+    height: 0.5;
+}
+.multi::-moz-scrollbar {
+    /* display: none; */
+}

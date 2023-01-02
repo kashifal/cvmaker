@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen bg-blue-600">
+  <div class="w-full h-screen bg-emerald-600">
 <div class="max-w-6xl mx-auto flex items-center justify-center">
   <div class="h-full    py-28 text-left">
     <p class="text-sm text-center font-thin text-white">Highlighted & Professional Resume  </p>
@@ -10,20 +10,20 @@
       We make professional Resume for you. Your Personal resume
     </p>
     <div class="flex gap-x-2  mt-2 justify-center">
-     <Button text="Create Resume" styles="shadow-lg hover:ring-1 hover:bg-blue-600 hover:ring-white hover:text-white" />
-     <Button text="Register Now" styles="shadow-lg bg-blue-600 text-white hover:text-white hover:ring-1 hover:ring-white" />
+     <Button text="Create Resume" styles="shadow-lg hover:ring-1 hover:bg-emerald-600 hover:ring-white hover:text-white" />
+     <Button text="Register Now" styles="shadow-lg bg-emerald-600 text-white hover:text-white hover:ring-1 hover:ring-white" />
     </div>
   </div>
   <div></div>
 </div>
 <div class="flex gap-4 w-full overflow-x-hidden px-4 py-4 scroll">
-  <img  style="width: 30%" class="rounded border-2 border-blue-600" :src="certificate" />
-  <img  style="width: 30%" class="rounded  border-2 border-blue-600" :src="certificate" />
-  <img  style="width: 30%" class="rounded  border-2 border-blue-600" :src="certificate" />
-  <img  style="width: 30%" class="rounded  border-2 border-blue-600" :src="certificate" />
+  <img  style="width: 30%" class="rounded border-2 border-emerald-600" :src="certificate" />
+  <img  style="width: 30%" class="rounded  border-2 border-emerald-600" :src="certificate" />
+  <img  style="width: 30%" class="rounded  border-2 border-emerald-600" :src="certificate" />
+  <img  style="width: 30%" class="rounded  border-2 border-emerald-600" :src="certificate" />
 </div>
   </div>
-  <div class="h-12 w-full bg-blue-50 top-12 absolute flex items-center justify-center top-[100%]">
+  <div class="h-12 w-full bg-emerald-50 top-12 absolute flex items-center justify-center top-[100%]">
     <p class="font-thin text-gray-700">@2023 Made with ❤️ By @Kashif</p>
   </div>
 </template>

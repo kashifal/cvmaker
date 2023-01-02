@@ -2,16 +2,16 @@
   <div class="w-full h-auto mt-12">
   <div class="max-w-6xl mx-auto">
     <div class="flex gap-x-2">
-      <div v-for="(tab, index)  in tabs" :key="tab.icon" @click="setForm(index)" :class="activeForm >= index ? 'bg-blue-100' : '' " class="hover:bg-blue-50 cursor-pointer  inline-flex items-center justify-center py-1 rounded-full px-4">
-        <span><i :class="tab.icon" class=" text-sm text-blue-600"></i></span>
-        <span class="ml-4 text-blue-600 text-sm">{{ tab.title }}</span>
+      <div v-for="(tab, index)  in tabs" :key="tab.icon" @click="setForm(index)" :class="activeForm >= index ? 'bg-emerald-100' : '' " class="hover:bg-emerald-50 cursor-pointer  inline-flex items-center justify-center py-1 rounded-full px-4">
+        <span><i :class="tab.icon" class=" text-sm text-emerald-600"></i></span>
+        <span class="ml-4 text-emerald-600 text-sm">{{ tab.title }}</span>
       </div>
     </div>
 
 <form>
 <BasicInfo :activeForm="activeForm" />
 <WorkHis :activeForm="activeForm" />
-  <Button :state="activeForm" text="Next" type="button" styles="bg-blue-600 text-white hover:text-white mt-6 px-6" />
+<Button :state="activeForm" text="Next" type="button" styles="bg-emerald-600 text-white hover:text-white mt-6 px-6" />
 
 </form>
   </div>
@@ -44,6 +44,10 @@ export default {
       {
         icon:'fa fa-tasks',
         title:'Work History'
+      },
+       {
+        icon:'fa fa-graduation-cap',
+        title:'Education'
       },
       {
         icon:'fa fa-cogs',

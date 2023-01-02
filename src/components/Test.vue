@@ -3,13 +3,13 @@
 
     <div class="relative">
       <div class="ring-1 cursor-pointer overflow-auto block px-2 py-2 text-sm w-full shadow focus:border-1 block focus:ring-1
- focus:ring-red-600 flex gap-x-2 ring:outline-1 text-gray-700 focus:outline-blue-600 focus:border-red-400 focus:ring-red-600 rounded ring-gray-300" @click="setDropdown()" >
+ focus:ring-red-600 flex gap-x-2 ring:outline-1 text-gray-700 focus:outline-emerald-600 focus:border-red-400 focus:ring-red-600 rounded ring-gray-300" @click="setDropdown()" >
         <p>{{ arr.length <= 0 ? 'Languages' : '' }}</p>
-        <p class="bg-blue-100  px-2  rounded-full"    v-for="item in arr" :key="item.value"  @click="deleteItem(item)">
+        <p class="bg-emerald-100  px-2  rounded-full"    v-for="item in arr" :key="item.value"  @click="deleteItem(item)">
           {{ item.text }}</p>
       </div>
       <div :class="dropdown ? 'block' : 'hidden'" class="w-full min-h-16 py-2 px-2 absolute shadow rounded ring-1 ring-gray-200 bg-white top-10">
-        <p     class="text-sm font-light text-gray-700 hover:bg-blue-700 px-1 py-2 rounded hover:text-white cursor-pointer transition-all" v-for="item in options"  @click="setValue(item)"  :key="item.value" >
+        <p     class="text-sm font-light text-gray-700 hover:bg-emerald-700 px-1 py-2 rounded hover:text-white cursor-pointer transition-all" v-for="item in options"  @click="setValue(item)"  :key="item.value" >
           {{ item.text }}
         </p>
       </div>
